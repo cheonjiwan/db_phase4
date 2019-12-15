@@ -51,15 +51,17 @@
 			<input type="button" value="닫기" onclick="setid()">
 		</center>
 		<script language="javascript">
+		function setid()
+		{
+			opener.document.userInfo.id.value="<%=id%>";
+			opener.document.userInfo.id_check.value="중복확인완료";
+			window.self.close();
+		}
 	<%
 	}
 	%>
 	
-		function setid()
-		{
-			opener.document.userInfo.id.value="<%=id%>";
-			window.self.close();
-		}
+		
 	</script>
 	
 	<%

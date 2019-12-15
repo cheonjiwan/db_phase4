@@ -47,13 +47,37 @@
 		String bdate = request.getParameter("ymd");
 		if(bdate.equals(""))
         	bdate="null";
+		 
 		//System.out.println(bdate);
 		String job = request.getParameter("job");
 		if(job.equals(""))
         	job="null";
 		
+		String query = "insert into account values("+"'"+id+"',"+"'"+password+"',"+"'"+phone+"',"+"'"+name+"',"+user_type+",";
 		
-		String query = "insert into account values("+"'"+id+"',"+"'"+password+"',"+"'"+phone+"',"+"'"+name+"',"+user_type+","+"'"+address+"',"+"'"+gender+"',"+"TO_DATE("+"'"+bdate+"',"+"'yyyy-mm-dd'),"+"'"+job+"')";
+		if(!address.equals("null"))
+			query+="'"+address+"',";
+		else
+			query+=address+",";
+		
+		if(!gender.equals("null"))
+			query+="'"+gender+"',";
+		else
+			query+=gender+",";
+		
+		if(!bdate.equals("null"))
+			query+="TO_DATE("+"'"+bdate+"',"+"'yyyy-mm-dd'),";
+		else
+			query+=bdate+",";
+		
+		if(!job.equals("null"))
+			query+="'"+job+"')";
+		else
+			query+=job+")";
+/* 		if(!bdate.equals("null"))
+			query = "isert into account values("+"'"+id+"',"+"'"+password+"',"+"'"+phone+"',"+"'"+name+"',"+user_type+","+"'"+address+"',"+"'"+gender+"',"+"TO_DATE("+"'"+bdate+"',"+"'yyyy-mm-dd'),"+"'"+job+"')";
+		else
+			query = "insert into account values("+"'"+id+"',"+"'"+password+"',"+"'"+phone+"',"+"'"+name+"',"+user_type+","+"'"+address+"',"+"'"+gender+"',"+"TO_DATE("+"'"+bdate+"',"+"'yyyy-mm-dd'),"+"'"+job+"')"; */
 		
 		System.out.println(query);
 		//rs = pstmt.executeQuery();

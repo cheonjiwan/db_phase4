@@ -9,6 +9,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script>
+
 $(function() {
 $( "#datepicker" ).datepicker(
 {
@@ -55,6 +56,11 @@ $( "#datepicker" ).datepicker(
         	alert("이름을 입력하세요");
         	return false;
         }
+        if(!document.userInfo.id_check.value)
+        {
+        	alert("아이디 중복확인을 해주세요");
+        	return false;
+        }
     }
     
     function goLoginForm() {
@@ -65,6 +71,7 @@ $( "#datepicker" ).datepicker(
     	var form1 = document.userInfo;
     	var user_id=form1.id.value;
     	var url="idCheck.jsp?id=" + user_id;
+    	var temp = document.getElementById('id_check');
     	window.open(url,"idCheck","toolbar=no,location=no,menubar=no,scrollbar=no,resizable=no,width=300,height=180");
     	return;
     }
@@ -77,6 +84,7 @@ $( "#datepicker" ).datepicker(
         <b><font size="6" color="gray">회원가입</font></b>
         <br><br><br>
         
+        
         <form method="post" action="joinpro.jsp" name="userInfo" onsubmit="return checkValue()">
             <table>
                 <tr>
@@ -85,6 +93,7 @@ $( "#datepicker" ).datepicker(
                         <input type="text" name="id" maxlength="20">
                         <form method:"post" action="idCheck.jsp">
                         	<input type="button" value="중복확인" onClick="idCheck()">
+                        	확인 유무 : <input type="text" name="id_check" value="">
                         </form>
                             
                     </td>
@@ -107,7 +116,7 @@ $( "#datepicker" ).datepicker(
                 <tr>
                     <td id="phone">휴대폰</td>
                     <td>
-                        <input type="text" name="phone" maxlength="40">
+                        <input type="text" name="phone" maxlength="20">
                     </td>
                 </tr>
                 
@@ -121,7 +130,7 @@ $( "#datepicker" ).datepicker(
                 <tr>
                     <td id="address">주소</td>
                     <td>
-                        <input type="text" size="50" name="address"/>
+                        <input type="text" size="50" name="address" maxlength="40"/>
                     </td>
                 </tr>
                 
