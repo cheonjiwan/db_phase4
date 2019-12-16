@@ -21,6 +21,7 @@
     <label>PW: </label>
     <input name="pw" type="password"><br>
     <input type="submit" value="로그인">
+    <input type="button" value="뒤로" onclick="location.href='firstpage.html'">
 	</form>
 </body>
 </html>

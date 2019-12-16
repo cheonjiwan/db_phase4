@@ -26,7 +26,7 @@
     // 2: 사용자 인증
    
     if(rs.next())
-   		temp = "loginok.jsp?error="+id; // 인증 성공
+   		temp = "loginok.jsp?id="+id; // 인증 성공
    	else
    		temp = "login.jsp?error=login-failed..";
 	

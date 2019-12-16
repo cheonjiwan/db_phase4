@@ -137,8 +137,8 @@ $( "#datepicker" ).datepicker(
                 <tr>
                     <td id="gender">성별</td>
                     <td>
-                        <input type="radio" name="gender" value="남" checked>남
-                        <input type="radio" name="gender" value="여" checked>여
+                        <input type="radio" name="gender" value="M" checked>남
+                        <input type="radio" name="gender" value="F" checked>여
                     </td>
                 </tr>
                     
@@ -178,7 +178,7 @@ $( "#datepicker" ).datepicker(
                 
             </table>
             <br>
-            <input type="submit" value="가입"/>  <input type="button" value="취소" onclick="goLoginForm()">
+            <input type="submit" value="가입"/>  <input type="button" value="취소" onclick="location.href='firstpage.html'">
         </form>
     </div>
 </body>

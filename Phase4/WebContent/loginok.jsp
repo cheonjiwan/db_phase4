@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ page session = "true" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +17,7 @@ String id=request.getParameter("id");
    <input type="button" value="전체 차량 조회" onclick="location.href='all_car.jsp?id=<%=id%>'"/>
    <input type="button" value="차량 조건 검색" onclick="location.href='search.jsp?id=<%=id%>'"/>
    <input type="button" value="차량 이름 검색" onclick="location.href='name_search?id=<%=id%>'"/>
-   <input type="button" value="회원 정보 수정" onclick="location.href='modify?id=<%=id%>'"/>
+   <input type="button" value="회원 정보 수정" onclick="location.href='userform.jsp?id=<%=id%>'"/>
    <input type="button" value="거래 내역 조회" onclick="location.href='when_trade.jsp?id=<%=id%>'"/>
    <input type="button" value="탈퇴" onclick="location.href='out.jsp?id=<%=id%>'"/>
    <input type="button" value="관리자 기능" onclick="location.href='manager.jsp?id=<%=id%>'"/>
