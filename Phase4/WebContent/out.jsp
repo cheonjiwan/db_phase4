@@ -32,7 +32,7 @@ String id=request.getParameter("id");
         </table>
         
         <br> 
-        <input type="button" value="Ãë¼Ò" onclick="javascript:window.location='loginok.jsp'">
+        <input type="button" value="Ãë¼Ò" onclick="javascript:window.location='loginok.jsp?id=<%=id%>'">
         <input type="submit" value="Å»Åð" /> 
     </form>
 </body>

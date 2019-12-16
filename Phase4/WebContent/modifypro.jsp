@@ -3,29 +3,7 @@
 <%@ page language="java" import="java.text.*,java.sql.*" %>
 <%@ page session = "true" %>
 <%@ page import="java.util.*" %>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-<script>
 
-$(function() {
-$( "#datepicker" ).datepicker(
-{
-	changeMonth: true, 
-    changeYear: true,
-    nextText: '다음 달',
-    prevText: '이전 달',
-    dateFormat: 'yy-mm-dd',
-    yearRange:'1901:2000',
-    showMonthAfterYear: true ,
-    dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
-    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
-        
-}
- 
-);
-});
-</script>   
 <!DOCTYPE html>
 <html>
 <head>

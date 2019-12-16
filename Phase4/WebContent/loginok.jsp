@@ -16,11 +16,24 @@ String id=request.getParameter("id");
 	<h1>메인화면</h1>
    <input type="button" value="전체 차량 조회" onclick="location.href='all_car.jsp?id=<%=id%>'"/>
    <input type="button" value="차량 조건 검색" onclick="location.href='search.jsp?id=<%=id%>'"/>
-   <input type="button" value="차량 이름 검색" onclick="location.href='name_search?id=<%=id%>'"/>
+   <input type="button" value="차량 이름 검색" onclick="location.href='name_search.jsp?id=<%=id%>'"/>
    <input type="button" value="회원 정보 수정" onclick="location.href='userform.jsp?id=<%=id%>'"/>
    <input type="button" value="거래 내역 조회" onclick="location.href='when_trade.jsp?id=<%=id%>'"/>
-   <input type="button" value="탈퇴" onclick="location.href='out.jsp?id=<%=id%>'"/>
-   <input type="button" value="관리자 기능" onclick="location.href='manager.jsp?id=<%=id%>'"/>
+   <%if(!id.equals("admin"))
+	 {
+	    %>
+		<input type="button" value="탈퇴" onclick="location.href='out.jsp?id=<%=id%>'"/>
+		<%     
+	 } %>
+	 
+	   
+   
+   <%if(id.equals("admin"))
+   {
+	   %>
+	   <input type="button" value="관리자 기능" onclick="location.href='manager.jsp?id=<%=id%>'"/>
+	   <%
+   } %>
    <input type="button" value="로그 아웃" onclick="location.href='logout.jsp?id=<%=id%>'"/>
    
    

@@ -63,7 +63,8 @@ String id=request.getParameter("id");
         //System.out.println(bdate);
         if(address==null)
         	address=" ";
-        
+        if(gender==null)
+        	gender=" ";
         if(bdate!=null)
         {
         	index=bdate.indexOf(' ');

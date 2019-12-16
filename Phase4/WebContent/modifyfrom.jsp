@@ -149,7 +149,7 @@ System.out.println(job);
                     
             </table>
             <br><br>
-            <input type="button" value="취소" onclick="javascript:window.location='loginok.jsp'">
+            <input type="button" value="취소" onclick="javascript:window.location='loginok.jsp?id=<%=id%>'">
             <input type="submit" value="수정"/>  
         </form>
 </body>
