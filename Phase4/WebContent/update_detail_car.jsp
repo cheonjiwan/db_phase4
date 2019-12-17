@@ -186,6 +186,6 @@
         
         <br>
         <input type="button" value="뒤로" onclick="changeForm(-1)">
-        <input type="button" value="정보 변경" onclick="location.href='vehicle_modifyfrom.jsp'">
+        <input type="button" value="정보 변경" onclick="location.href='vehicle_modifyfrom.jsp?id=<%=id%>'">
 </body>
 </html>

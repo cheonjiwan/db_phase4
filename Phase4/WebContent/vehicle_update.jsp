@@ -62,5 +62,6 @@
 
   	 }
 	%>
+	<input type="button" value="메인으로" onclick="location.href='loginok.jsp?id=<%=id%>'"></input>
 </body>
 </html>

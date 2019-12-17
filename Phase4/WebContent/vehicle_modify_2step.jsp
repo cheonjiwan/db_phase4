@@ -27,7 +27,7 @@ function input_Text(){
 </script>
 <body>
 <b><font size="6" color="gray">차량 수정</font></b>
-<h3>상위 모델 수정시 하위 모델은 반드시 수정해야 합니다.</h3>
+
         <h5>(2/5)</h5>
         <%
         int nextcheck=0;

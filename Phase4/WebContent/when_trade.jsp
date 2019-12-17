@@ -89,13 +89,13 @@ if(id.equals("admin"))
 	<h1 aligh="left">거래 내역</h1>
 	<h2 align="right">관리자 기능</h1>
 	<div class="box1">
-		<input type="button" value="제조사별 거래내역" onclick="location.href='by_make.jsp'">
+		<input type="button" value="제조사별 거래내역" onclick="location.href='by_make.jsp?id=<%=id%>'">
 	</div>
 	<div class="box2">
-		<input type="button" value="연도별 거래내역" onclick="location.href='by_year.jsp'">
+		<input type="button" value="연도별 거래내역" onclick="location.href='by_year.jsp?id=<%=id%>'">
 	</div>
 	<div class="box3">
-		<input type="button" value="월별 거래내역" onclick="location.href='by_month.jsp'">
+		<input type="button" value="월별 거래내역" onclick="location.href='by_month.jsp?id=<%=id%>'">
 	</div>
 	<%
 }else
@@ -105,5 +105,6 @@ if(id.equals("admin"))
 	<%
 } %>
 
+<input type="button" value="메인으로" onclick="location.href='loginok.jsp?id=<%=id%>'"></input>
 </body>
 </html>

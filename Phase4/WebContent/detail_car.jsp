@@ -66,8 +66,17 @@
 	<form action="buy.jsp" method="post">
 	<input type="hidden" name="id" value=<%=id %>></input>
 	<input type="hidden" name="car_number" value=<%=car_number %>></input>
-	<input type="submit" value="구매하기"></input>
+	<%
+	if(!id.equals("admin"))
+	{
+		%>
+		<input type="submit" value="구매하기"></input>
+		<%	
+	}
+	%>
+	
 	</form>
+	<input type="button" value="메인으로" onclick="location.href='loginok.jsp?id=<%=id%>'"></input>
 
 </body>
 </html>

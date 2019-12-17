@@ -30,7 +30,7 @@
 	
 	request.setCharacterEncoding("euc-kr");
 	
-	
+	String id = request.getParameter("id");
 	String car_number = (String)session.getAttribute("car_number");
 	String price = (String)session.getAttribute("price");
 	String year = (String)session.getAttribute("year");
@@ -84,6 +84,7 @@
             </tr>
         </table>
         <input type="button" value="Ãë¼Ò" onclick="location.href='vehicle_update.jsp'">
+        <input type="hidden" name='id' value="<%=id%>">
         <input type="hidden" name='category' value="<%=category%>">
         <input type="hidden" name='engine_displacement' value="<%=engine_displacement%>">
         <input type="hidden" name='transmission' value="<%=transmission%>">
