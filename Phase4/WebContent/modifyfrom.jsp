@@ -69,7 +69,7 @@ System.out.println(job);
 <br><br>
         <b><font size="6" color="gray">회원정보 수정</font></b>
         <br><br><br>
-<form method="post" action="modifypro.jsp?id=<%=id %>" 
+		<form method="post" action="modifypro.jsp?id=<%=id %>" 
                 name="userInfo" onsubmit="return checkValue()">
                 
             <table>

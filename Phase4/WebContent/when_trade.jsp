@@ -33,12 +33,13 @@ String id=request.getParameter("id");
 		System.out.println(url);
 		Connection conn = null;
 		PreparedStatement pstmt;
-		Statement stmt = null;
+		
 		ResultSet rs;
 		ResultSetMetaData rsmd;
 		int cnt;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
+		Statement stmt = null;
 		stmt = conn.createStatement();
 		
         request.setCharacterEncoding("euc-kr");
