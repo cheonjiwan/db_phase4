@@ -2,8 +2,6 @@
 	pageEncoding="EUC-KR"%>
 <%@ page language="java"
 	import="java.text.*,java.sql.*, java.util.*,java.util.ArrayList"%>
-<%@ page session = "true" %>
-<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,41 +22,29 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url, user, pass);
 		String id=request.getParameter("id");
-		String m_name=request.getParameter("m_name");
-		String model_name=request.getParameter("model_name");
-
-		
 		String car_number=request.getParameter("car_number");
-		String query="";
-		System.out.println(m_name);
-		System.out.println("testtesttest");
-		
-		if((m_name.equals("null")||m_name==null)&&(model_name==null||model_name.equals("null")))
-			{
-				query = "select detail_model_name from detail_model";
-			}
-		else if(model_name!=null)//makeÀÔ·Â½Ã
-			query="select detail_model_name from detail_model where model_name='"+model_name.replace("/","")+"'";
-		else
-			query="select detail_model_name from detail_model where m_number=(select m_number from make where name='"+m_name.replace("/","")+"')";
+		  
+	   String price = request.getParameter("price");
+	   String distance_driven = request.getParameter("distance_driven");
+	   String year = request.getParameter("year");
 
-	
-		System.out.println(query);
+		String query = "select name from make";
 		pstmt = conn.prepareStatement(query);
 		rs = pstmt.executeQuery();
 		%>
 		
-		<form action="search4.jsp" method="post">
+		<form action="insert2.jsp" method="post">
 		<%
 		while(rs.next())
 		{
 			String name=rs.getString(1);
 			%>
 			<input type="hidden" name='id' value="<%=id%>">
-			
-			<input type="hidden" name='m_name' value="<%=m_name %>">
-			<input type="hidden" name='model_name' value="<%=model_name %>">
-			<input type='radio' name='detail_model_name' value="<%=name %>"/><%=name %>
+			<input type="hidden" name='car_number' value="<%=car_number%>">
+			<input type="hidden" name='price' value="<%=price%>">
+			<input type="hidden" name='distance_driven' value="<%=distance_driven%>">
+			<input type="hidden" name='year' value="<%=year%>">
+			<input type='radio' name='m_name' value="<%=name %>"><%=name %>
 			<%
 		}
 		
@@ -66,3 +52,6 @@
 		<input type="submit" value="next">
 	</form>
 	
+	  
+</body>
+</html>
