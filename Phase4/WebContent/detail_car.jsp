@@ -60,7 +60,6 @@
 		out.println("</td>");
 		out.println("</table>");
 		
-		out.println(id+car_number);
 
 	%>
 <body>	

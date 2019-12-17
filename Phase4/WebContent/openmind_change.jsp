@@ -68,11 +68,10 @@
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
-		String admin="admin";
 	%>
 <body>
 	<form action="loginok.jsp" method="post">
-	<input type="hidden" name="id" value=<%=admin %>></input>
+	<input type="hidden" name="id" value=<%=id%>></input>
 	<input type="submit" value="메인화면"></input>
 	</form>
 </body>

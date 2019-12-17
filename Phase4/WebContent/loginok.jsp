@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <%@ page session = "true" %>
-<%@ page import="java.util.*" %>
+<%@ page language="java" import="java.text.*,java.sql.*, java.util.*,java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +11,24 @@
 
 <%
 String id=request.getParameter("id");
+String serverIP = "155.230.36.61";
+String strSID = "orcl";
+String portNum = "1521";
+String user = "s2015113955";
+String pass = "wan2good";
+String url = "jdbc:oracle:thin:@" + serverIP + ":" + portNum + ":" + strSID;
+System.out.println(url);
+Connection conn = null;
+PreparedStatement pstmt;
+ResultSet rs;
+Class.forName("oracle.jdbc.driver.OracleDriver");
+conn = DriverManager.getConnection(url, user, pass);
+
+String query = "select * from order_list where id='"+id+"'";
+System.out.println(query);
+pstmt = conn.prepareStatement(query);
+rs = pstmt.executeQuery();
+
 %>
 <body>
 	<h1>메인화면</h1>
@@ -35,7 +53,16 @@ String id=request.getParameter("id");
 	   <%
    } %>
    <input type="button" value="로그 아웃" onclick="location.href='logout.jsp?id=<%=id%>'"/>
+   <%
+   if(!rs.next())
+   {
+	  %>
+	   <input type="button" value="추천 상품 보기" onclick="location.href='best_car.jsp?id=<%=id%>'"/>
+	  <%
+   }
    
+   
+   %>
    
 </body>
 </html>
