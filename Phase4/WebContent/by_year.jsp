@@ -28,6 +28,7 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
 		stmt = conn.createStatement();
+		String id=request.getParameter("id");
 		
         request.setCharacterEncoding("euc-kr");
         
@@ -62,4 +63,6 @@
 </body>
 
 	<h2>연도별 거래내역</h2>
+    <input type="button" value="메인으로 돌아가기" onclick="location.href='loginok.jsp?id=<%=id%>'"/>
+
 </html>

@@ -126,17 +126,21 @@
 					  conn.commit();
 				  }
              }
-		
+		%>
+		<body>
+			<h1> 등록 완료되었습니다</h1>
+			<form action="loginok.jsp" method="post">
+				<input type="hidden" name="id" value=<%=id %>></input>
+				<input type="submit" value="메인화면"></input>
+				
+			
+			</form>
+			</body>
+			</html>
+			 
+			 <%
+			 
+			 
 		
 		}
 		%>
-<body>
-<h1> 등록 완료되었습니다</h1>
-<form action="loginok.jsp" method="post">
-	<input type="hidden" name="id" value=<%=id %>></input>
-	<input type="submit" value="메인화면"></input>
-	
-
-</form>
-</body>
-</html>

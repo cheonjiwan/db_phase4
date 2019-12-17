@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<h2>제조사별 거래내역</h2>
 <% 
 	 	String serverIP = "155.230.36.61";
 		String strSID = "orcl";
@@ -25,6 +26,7 @@
 		ResultSet rs;
 		ResultSetMetaData rsmd;
 		int cnt;
+		String id=request.getParameter("id");
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
 		stmt = conn.createStatement();
@@ -61,8 +63,19 @@
 	        // TODO Auto-generated catch block
 	        e1.printStackTrace();
 	    }
+        %>
+        
+        
+        <%
+        
  %>
 </body>
+<body>
 
-	<h2>제조사별 거래내역</h2>
+        	<input type="button" value="메인으로 돌아가기" onclick="location.href='loginok.jsp?id=<%=id%>'"/>
+
+</body>
+
+	
+					
 </html>

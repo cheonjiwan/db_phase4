@@ -24,6 +24,7 @@
 		Statement stmt = null;
 		ResultSet rs;
 		ResultSetMetaData rsmd;
+		String id=request.getParameter("id");
 		int cnt;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
@@ -62,4 +63,6 @@
 </body>
 
 	<h2>월별 거래내역</h2>
+	        	<input type="button" value="메인으로 돌아가기" onclick="location.href='loginok.jsp?id=<%=id%>'"/>
+	
 </html>
