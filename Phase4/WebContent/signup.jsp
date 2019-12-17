@@ -178,7 +178,7 @@ $( "#datepicker" ).datepicker(
                 
             </table>
             <br>
-            <input type="submit" value="가입"/>  <input type="button" value="취소" onclick="location.href='firstpage.html'">
+            <input type="submit" value="가입"/> <input type="reset" value="초기화"/> <input type="button" value="취소" onclick="location.href='firstpage.html'">
         </form>
     </div>
 </body>
