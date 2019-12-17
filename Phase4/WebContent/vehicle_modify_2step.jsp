@@ -8,10 +8,28 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">
+
+function nextcheck() {
+
+	if(document.fr.check.value=="0")
+	{
+		alert("체크 해주세요.");
+		return false;	
+	}
+	
+}
+function input_Text(){
+	document.fr.check.value = "1";
+}
+
+
+</script>
 <body>
 <b><font size="6" color="gray">차량 수정</font></b>
         <h5>(2/5)</h5>
         <%
+        int nextcheck=0;
         String car_number = request.getParameter("car_number");
     	String price = request.getParameter("price");
     	String year = request.getParameter("year");
@@ -59,7 +77,7 @@
 		rs = pstmt.executeQuery();
 		%>
 		
-		<form action="vehicle_modify_3step.jsp" method="post">
+		<form action="vehicle_modify_3step.jsp" method="post" name="fr" onsubmit="return nextcheck()">
 		<%
 		while(rs.next())
 		{
@@ -83,13 +101,16 @@
 			if(m_name.equals(name))
 			{
 				%>
-				<input type='radio' name='m_name' value="<%=name %>" checked><%=name %>
+				<input type='radio' name='m_name' value="<%=name %>" checked ><%=name %>
+				
 				<%
+				nextcheck=1;
 			}
 			else
 			{
 				%>
-				<input type='radio' name='m_name' value="<%=name %>"><%=name %>
+				<input type='radio' name='m_name' value="<%=name %>" onclick='input_Text()'><%=name %>
+				
 				<%	
 			}
 			 %>
@@ -98,6 +119,19 @@
 		}
 		
 		%>
+		<%
+		if(nextcheck==1)
+		{
+			%>
+			<input type="text" name="check" value="1">
+			<%		
+		}else
+		{
+			%>
+			<input type="text" name="check" value="0">
+			<%
+		}
+		 %>
 		<input type="submit" value="next">
 	</form>
 </body>

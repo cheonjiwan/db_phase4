@@ -9,12 +9,30 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<script type="text/javascript">
+
+function nextcheck() {
+
+	if(document.fr.check.value=="0")
+	{
+		alert("체크 해주세요.");
+		return false;	
+	}
+	
+}
+function input_Text(){
+    document.fr.check.value = "1";
+}
+
+
+</script>
 </head>
 <body>
 <b><font size="6" color="gray">차량 수정</font></b>
         <h5>(4/5)</h5>
         <br>      
        <% 
+       int nextcheck=0;
 		String serverIP = "155.230.36.61";
 		String strSID = "orcl";
 		String portNum = "1521";
@@ -62,7 +80,7 @@
 		rs = pstmt.executeQuery();
 		%>
 		
-		<form action="vehicle_modify_5step.jsp" method="post">
+		<form action="vehicle_modify_5step.jsp" method="post" name="fr" onsubmit="return nextcheck()">
 		<%
 		while(rs.next())
 		{
@@ -88,10 +106,11 @@
 				%>
 				<input type='radio' name='detail_model_name' value="<%=name %>" checked/><%=name %>
 				<%
+				nextcheck=1;
 			}else
 			{
 				%>
-				<input type='radio' name='detail_model_name' value="<%=name %>"/><%=name %>
+				<input type='radio' name='detail_model_name' value="<%=name %>" onclick='input_Text()'/><%=name %>
 				<%
 			}
 			%>
@@ -100,6 +119,19 @@
 		}
 		
 		%>
+		<%
+		if(nextcheck==1)
+		{
+			%>
+			<input type="text" name="check" value="1">
+			<%		
+		}else
+		{
+			%>
+			<input type="text" name="check" value="0">
+			<%
+		}
+		 %>
 		<input type="submit" value="next">
 	</form>
 </body>
