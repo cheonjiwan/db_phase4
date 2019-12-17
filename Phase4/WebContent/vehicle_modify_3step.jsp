@@ -29,6 +29,7 @@ function input_Text(){
 </head>
 <body>
 <b><font size="6" color="gray">차량 수정</font></b>
+<h3>상위 모델 수정시 하위 모델은 반드시 수정해야 합니다.</h3>
         <h5>(3/5)</h5>
         <br>          
 <% 
@@ -128,12 +129,12 @@ function input_Text(){
 		if(nextcheck==1)
 		{
 			%>
-			<input type="text" name="check" value="1">
+			<input type="hidden" name="check" value="1">
 			<%		
 		}else
 		{
 			%>
-			<input type="text" name="check" value="0">
+			<input type="hidden" name="check" value="0">
 			<%
 		}
 		 %>
